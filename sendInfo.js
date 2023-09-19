@@ -11,7 +11,7 @@ const addProperty = document.getElementById("add-property")
 const form = document.getElementById("form")
 
 
-let url = "https://mr-home-rental-backend.onrender.com"
+let url = "https://mr-home-rental-backend.onrender.com/submit-form"
 
 const sendProperty = async (data) => {
     const response = await fetch(url, {
