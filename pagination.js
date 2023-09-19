@@ -22,62 +22,8 @@ const overlay = document.getElementById("overlay")
 const body = document.body;
 const Popup = document.getElementById("personal-property")
 const viewPropertyButton = document.getElementById("viewProperty")
-let id = 7;
 const rowsPerPage = 6;
 let currentPage = 1;
- 
-
-// const allProperties = [
-//     {
-//         address: "2578 Folsom street, san francisco, CA, 94110",
-//         roomType: "Private Room",
-//         price: 1200,
-//         image: null, 
-//         imagesource: "./images/img-1.png",
-//         id: "property-1"
-//     },
-//     {
-//         address: "2578 Folsom street, san francisco, CA, 94110",
-//         roomType: "Private Room",
-//         price: 1200,
-//         image: null,
-//         imagesource: "./images/img2.png",
-//         id: "property-2"
-//     },
-//     {
-//         address: "2578 Folsom street, san francisco, CA, 94110",
-//         roomType: "Private Room",
-//         price: 1200,
-//         image: null,
-//         imagesource: "./images/img3.png",
-//         id: "property-3"
-//     },
-//     {
-//         address: "2578 Folsom street, san francisco, CA, 94110",
-//         roomType: "Private Room",
-//         price: 1200,
-//         image: null, 
-//         imagesource: "./images/img4.png",
-//         id: "property-4"
-//     },
-//     {
-//         address: "2578 Folsom street, san francisco, CA, 94110",
-//         roomType: "Private Room",
-//         price: 1200,
-//         image: null,
-//         imagesource: "./images/img5.png",
-//         id: "property-5"
-//     },
-//     {
-//         address: "2578 Folsom street, san francisco, CA, 94110",
-//         roomType: "Private Room",
-//         price: 1200,
-//         image: null, 
-//         imagesource: "./images/img6.png",
-//         id: "property-6"
-//     }
-// ];
-
 
 
 
@@ -88,7 +34,7 @@ const pagination = () => {
   
   const elementsForPage = allProperties.slice(startIndex, endIndex);
     properties.innerHTML = ""
-    
+
 
     elementsForPage.forEach(element => {
         const div = document.createElement("div")
@@ -269,12 +215,10 @@ const pagination = () => {
            overlay.addEventListener("click", closePopUp)
            
         })
+
     });
 
 }
-
-
-
 
 
 image.addEventListener("change", () => {
@@ -287,11 +231,7 @@ image.addEventListener("change", () => {
 
 addProperty.addEventListener("click", (e) => {
     e.preventDefault()
-//     if (address.value || roomType.value || price.value  == "") {
-//         alert("Please fill in the required details");
-//     } else {
 
-// }
  const property = {
     name: sellerName.value,
     address: address.value,
@@ -306,10 +246,10 @@ addProperty.addEventListener("click", (e) => {
 
     form.reset();
     filename.textContent = ""
-    id++;
 
     allProperties.push(property);
-    pagination();
+        pagination();
+    
 })
 
 
@@ -324,17 +264,6 @@ function updateActiveButton() {
     activeButton.classList.add("active");
     }
     
-    // const newButton = () => {
-    //     paginationNav.innerHTML = 
-    //     `
-    //     <button>First</button>
-    //     <button>3</button>
-    //     <button>${currentPage + 1}</button>
-    //     <button>${currentPage + 2}</button>
-    //     <button>Next</button>
-    //     `
-    //     propertyList.appendChild(paginationNav)
-    // }
 
     buttons.forEach((button, index) => {
         if (currentPage === 1) {
@@ -377,8 +306,9 @@ paginationNav.addEventListener("click", (event) => {
     currentPage = parseInt(clickedButton.textContent);
   }
 
-  pagination()
-  updateActiveButton();
+    pagination()
+    updateActiveButton()
+
 });
 
 pagination()
@@ -388,7 +318,6 @@ viewPropertyButton.addEventListener("click", viewProperty)
 
 document.getElementById("myLink").addEventListener("click", function(event) {
     event.preventDefault(); 
-    console.log("douio")
     
       var linkHref = this.getAttribute("href");
 
@@ -399,7 +328,6 @@ const navToggle = document.getElementById("menu");
 const navDropdown = document.getElementById("nav-dropdown")
 const times = document.getElementById("times")
 
-// const navItems = document.querySelectorAll(".nav-dropdown li")
 navToggle.addEventListener("click", () => {
 navDropdown.style.display = "block"
 times.style.display = "block"
@@ -412,6 +340,3 @@ times.addEventListener("click", () => {
 })
 
 
-
-// module.exports = { allProperties }
-// export {allProperties}

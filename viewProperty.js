@@ -5,7 +5,7 @@ const body = document.body;
 const Popup = document.getElementById("personal-property")
 
 export const viewProperty = () => {
-    console.log("hii")
+    
     allProperties.forEach(element => {
         const div = document.createElement("div")
         div.setAttribute("class", "property-container")
