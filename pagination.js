@@ -25,7 +25,7 @@ const viewPropertyButton = document.getElementById("viewProperty")
 let id = 7;
 const rowsPerPage = 6;
 let currentPage = 1;
-
+ 
 
 // const allProperties = [
 //     {
@@ -138,9 +138,6 @@ const pagination = () => {
         div.appendChild(table);
 
         properties.appendChild(div)
-        console.log(div)
-
- 
 
         div.addEventListener("click", () => {
             console.log("hello")
@@ -304,8 +301,7 @@ addProperty.addEventListener("click", (e) => {
     roomType: roomType.value,
     price: parseInt(price.value),
     description: description.value,
-    image: image.files[0],
-    id: `property-${id}`
+    image: image.files[0]
 }    
 
     form.reset();

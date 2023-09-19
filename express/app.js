@@ -15,11 +15,11 @@ const PORT = process.env.PORT || 3001
 app.use(morgan("dev"))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true}))
-app.use(cors({
-//     // origin: "https://mr-home-rental.onrender.com",
-    origin: ["http://127.0.0.1:5501"],
-    credentials: true
-}))
+// app.use(cors({
+// //     // origin: "https://mr-home-rental.onrender.com",
+//     origin: ["http://127.0.0.1:5501"],
+//     credentials: true
+// }))
 
 const storage = multer.memoryStorage();
 const upload = multer({ storage })
