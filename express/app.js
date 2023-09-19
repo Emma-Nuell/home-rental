@@ -16,7 +16,8 @@ app.use(morgan("dev"))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true}))
 app.use(cors({
-   origin: "https://mr-home-rental.onrender.com",
+    origin: ["https://mr-home-rental.onrender.com",
+        "http://127.0.0.1:5501"],
     credentials: true
 }))
 
