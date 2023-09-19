@@ -10,9 +10,8 @@ const description = document.getElementById("description")
 const addProperty = document.getElementById("add-property")
 const form = document.getElementById("form")
 
-console.log(form)
 
-let url = ""
+let url = "https://mr-home-rental-backend.onrender.com"
 
 const sendProperty = async (data) => {
     const response = await fetch(url, {
@@ -23,6 +22,10 @@ const sendProperty = async (data) => {
         body: JSON.stringify(data)
     })
 
+
+    let userData = await response.json();
+    console.log(userData)
+    
       if(response.ok) {
         alert("Property Uploaded Successfully")
     }else {
@@ -56,4 +59,5 @@ addProperty.addEventListener("click", (e) => {
     // pagination();
 
     sendProperty(property)
+    console.log("hiii")
 })
