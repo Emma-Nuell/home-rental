@@ -8,6 +8,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.min.css" >
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="./index.css">
     <title>Home Rentals</title>
 </head>
@@ -243,21 +244,56 @@
                 <input inputmode="numeric" type="number" required placeholder="Enter Unit" id="unit">
             </div>
             <div class="input-container">
-                <label for="city">City <span>*</span></label>
-                <select id="city">
-                    <option disabled selected>Select City</option>
+                <label for="state">State <span>*</span></label>
+                <select id="state">
+                    <!-- <option selected disabled value="">Select a State</option> -->
+                    <option value="abia">Abia</option>
+                    <option value="adamawa">Adamawa</option>
+                    <option value="akwaibom">Akwa Ibom</option>
+                    <option value="anambra">Anambra</option>
+                    <option value="bauchi">Bauchi</option>
+                    <option value="bayelsa">Bayelsa</option>
+                    <option value="benue">Benue</option>
+                    <option value="borno">Borno</option>
+                    <option value="crossriver">Cross River</option>
+                    <option value="delta">Delta</option>
+                    <option value="ebonyi">Ebonyi</option>
+                    <option value="edo">Edo</option>
+                    <option value="ekiti">Ekiti</option>
+                    <option value="enugu">Enugu</option>
+                    <option value="abuja">Federal Capital Territory (FCT)</option>
+                   <option value="gombe">Gombe</option>
+                   <option value="imo">Imo</option>
+                   <option value="jigawa">Jigawa</option>
+                   <option value="kaduna">Kaduna</option>
+                   <option value="kano">Kano</option>
+                   <option value="kastina">Kastina</option>
+                   <option value="kebbi">Kebbi</option>
+                   <option value="kogi">Kogi</option>
+                   <option value="kwara">Kwara</option>
+                   <option value="lagos" selected>Lagos</option>
+                   <option value="nasarawa">Nasarawa</option>
+                   <option value="niger">Niger</option>
+                   <option value="ogun">Ogun</option>
+                   <option value="ondo">Ondo</option>
+                   <option value="osun">Osun</option>
+                   <option value="oyo">Oyo</option>
+                   <option value="plateau">Plateau</option>
+                   <option value="rivers">Rivers</option>
+                   <option value="sokoto">Sokoto</option>
+                   <option value="yobe">Yobe</option>
+                   <option value="zamfara">Zamfara</option>
                 </select>
             </div>
             <div class="input-container">
-                <label for="state">State <span>*</span></label>
-                <select id="state">
-                    <option disabled selected>Select State</option>
+                <label for="city">City <span>*</span></label>
+                <select id="city">
                 </select>
             </div>
             <div class="input-container">
                 <label for="room-type">Room Type <span>*</span></label>
                 <select id="room-type">
-                    <option disabled selected>Select Room Type</option>
+                    <option disabled selected value="">Select Room Type</option>
                     <option value="Private Room">Private Room</option>
                     <option value="Public Room">Public Room</option>
                 </select>

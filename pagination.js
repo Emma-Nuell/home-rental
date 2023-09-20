@@ -1,4 +1,4 @@
-import { allProperties } from "./allProperties.js"
+import { allProperties, cityOptions } from "./allProperties.js"
 import { viewProperty } from "./viewProperty.js"
 const address = document.getElementById("address")
 const roomType = document.getElementById("room-type")
@@ -6,7 +6,7 @@ const price = document.getElementById("price")
 const image = document.getElementById("image")
 const unitNumber = document.getElementById("unit")
 const sellerName = document.getElementById("name")
-const city = document.getElementById("city")
+const city = document.getElementById("city") 
 const state = document.getElementById("state")
 const description = document.getElementById("description")
 const addProperty = document.getElementById("add-property")
@@ -26,7 +26,6 @@ const rowsPerPage = 6;
 let currentPage = 1;
 
 
-
 const pagination = () => {
 
     const startIndex = (currentPage - 1) * rowsPerPage;
@@ -35,11 +34,11 @@ const pagination = () => {
   const elementsForPage = allProperties.slice(startIndex, endIndex);
     properties.innerHTML = ""
 
+    
 
     elementsForPage.forEach(element => {
         const div = document.createElement("div")
         div.setAttribute("class", "property-container")
-        div.setAttribute("id", element.id)
   
         if (element.image) {
             const img = document.createElement("img");
@@ -221,6 +220,21 @@ const pagination = () => {
 }
 
 
+function updateCityDropdown() {
+    const selectedState = state.value;
+
+    city.innerHTML = '';
+
+    cityOptions[selectedState].forEach(element => {
+        const option = document.createElement("option");
+        option.text = element;
+        city.appendChild(option);
+    });
+}
+
+updateCityDropdown();
+state.addEventListener("change", updateCityDropdown)
+
 image.addEventListener("change", () => {
     if (image.files.length > 0) {
         filename.textContent = image.files[0].name;
@@ -232,26 +246,44 @@ image.addEventListener("change", () => {
 addProperty.addEventListener("click", (e) => {
     e.preventDefault()
 
- const property = {
-    name: sellerName.value,
-    address: address.value,
-    unitNumber: parseInt(unitNumber.value), 
-    city: city.value,
-    state: state.value ,
-    roomType: roomType.value,
-    price: parseInt(price.value),
-    description: description.value,
-    image: image.files[0]
-}    
-
-    form.reset();
-    filename.textContent = ""
-
-    allProperties.push(property);
-        pagination();
-    
+    if (sellerName.value == "" ) {
+        alert("Please provide a Name before submitting")
+        e.preventDefault()
+    }
+    else if (address.value == ""){
+        alert("Please fill in the Address field before submitting")
+        e.preventDefault()
+    }
+    else if (roomType.value == ""){
+        alert("Please provide a Room-Type before submitting")
+        e.preventDefault()
+    }
+    else if (price.value == "") {
+        alert("Please fill in the Price field before submitting")
+        e.preventDefault()
+    }
+    else if (image.files.length === 0){
+        alert("Please provide an image before submitting")
+        e.preventDefault()
+    }
+    else {
+        const property = {
+            name: sellerName.value,
+            address: address.value,
+            unitNumber: parseInt(unitNumber.value), 
+            city: city.value,
+            state: state.value ,
+            roomType: roomType.value,
+            price: parseInt(price.value),
+            description: description.value,
+            image: image.files[0]
+        }    
+            form.reset();
+            filename.textContent = ""
+            allProperties.push(property);
+            pagination();
+    }
 })
-
 
 
 function updateActiveButton() {
@@ -263,8 +295,7 @@ function updateActiveButton() {
   if (activeButton) {
     activeButton.classList.add("active");
     }
-    
-
+  
     buttons.forEach((button, index) => {
         if (currentPage === 1) {
             if (index === 0) {
@@ -282,7 +313,6 @@ function updateActiveButton() {
             } 
             else {
                 button.style.display = "block";
-                // button.classList.remove("first")
             }
         } 
         else {
@@ -305,7 +335,6 @@ paginationNav.addEventListener("click", (event) => {
   } else {
     currentPage = parseInt(clickedButton.textContent);
   }
-
     pagination()
     updateActiveButton()
 

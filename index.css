@@ -11,7 +11,7 @@
     background-color: #FFF;
  }
  body.popup-active {
-    overflow: hidden;
+    overflow: hidden; 
  }
  :root {
     --dm: "DM Sans", sans-serif;
@@ -340,7 +340,6 @@
 }
 .properties .property-container {
     width: 300px;
-    max-width: 350px;
     height: 450px;
     background-color: #fff;
     display: flex;
@@ -348,7 +347,6 @@
     margin-bottom: 30px;
     border-radius: 26px;
     border: 1px rgba(151, 151, 151, 0.4) solid;
-    flex-grow: 1;
 }
 .properties .property-container img {
     height: 50%;
@@ -846,7 +844,7 @@ input[type="file"] {
 .about .details {
     display: flex;
     gap: 5%;
-    width: 35%;
+    width: 60%;
     align-items: center;
     margin-top: 30px;
 }
@@ -866,7 +864,7 @@ input[type="file"] {
 }
 .about .slider {
     position: absolute;
-    bottom: -70px;
+    bottom: -50px;
     left: 0;
 }
 .about .image-container {

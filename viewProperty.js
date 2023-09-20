@@ -8,8 +8,7 @@ export const viewProperty = () => {
     
     allProperties.forEach(element => {
         const div = document.createElement("div")
-        div.setAttribute("class", "property-container")
-        div.setAttribute("id", element.id)
+        div.setAttribute("class", "property-container") 
   
         if (element.image) {
             const img = document.createElement("img");
